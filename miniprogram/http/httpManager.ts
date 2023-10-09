@@ -50,7 +50,7 @@ export default class HttpManager {
      * @returns 请求结果， true为成功， false为失败
      */
     private responseHandle(
-        response: WechatMiniprogram.RequestSuccessCallbackResult<IResponseData>
+        response: WechatMiniprogram.RequestSuccessCallbackResult<IResponseData>,
     ): boolean {
         const { statusCode, data } = response
         let success = false
@@ -93,7 +93,7 @@ export default class HttpManager {
             | 'DELETE'
             | 'TRACE'
             | 'CONNECT',
-        data?: Object
+        data?: Object,
     ): Promise<any> {
         return new Promise((resolve, reject) => {
             wx.request({
@@ -101,7 +101,7 @@ export default class HttpManager {
                 method,
                 data: data || '',
                 success: (
-                    response: WechatMiniprogram.RequestSuccessCallbackResult<IResponseData>
+                    response: WechatMiniprogram.RequestSuccessCallbackResult<IResponseData>,
                 ) => {
                     const result = this.responseHandle(response)
                     if (result) {
@@ -126,7 +126,7 @@ export default class HttpManager {
                 .filter((item) => params[item] === 0 || params[item])
                 .map((item) => {
                     return `${encodeURIComponent(item)}=${encodeURIComponent(
-                        params[item]
+                        params[item],
                     )}`
                 })
                 .join('&')

@@ -74,15 +74,10 @@ I18nPage({
     },
     //生成城市当前日期的数据
     _generateCurrentWeather(currentDate: string, currentCity: string) {
-        console.log(
-            '🚀 ~ file: index.ts:75 ~ _generateCurrentWeather ~ this.data.selectWeather:',
-            this.data.allWeatherCache
-        )
-
         const currentCityData = this.data.allWeatherCache[currentCity]
 
         const currentDateWeather = currentCityData.casts.find(
-            (item) => item.date === currentDate
+            (item) => item.date === currentDate,
         )
         console.log('currentDateWeather', currentDateWeather)
 
@@ -97,7 +92,7 @@ I18nPage({
                     currentCity: {
                         ...currentCityData,
                         displayCast: currentCityData.casts.filter(
-                            (item) => item.date !== currentDate
+                            (item) => item.date !== currentDate,
                         ),
                     },
                 },
@@ -142,7 +137,7 @@ I18nPage({
         const currentDate = event.currentTarget.dataset.date
         this._generateCurrentWeather(
             currentDate,
-            this.data.selectWeather.currentCity.city
+            this.data.selectWeather.currentCity.city,
         )
     },
     changeLanguage() {

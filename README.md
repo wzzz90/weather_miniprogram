@@ -10,6 +10,9 @@
 -   使用 `Promise` 封装了 `wx.request`，并创建了一个 `httpManager` 单例
 -   使用 `eslint` + `prettier` + `husky` 规范代码格式
 -   引入了 `weUI` 库
+-   状态管理
+-   路由
+-   自动化部署
 
 # 开始
 
@@ -32,8 +35,6 @@ yarn dev
 yarn build:test
 yarn build:prod
 ```
-
-TBD
 
 # 项目搭建笔记
 
@@ -432,6 +433,11 @@ Page({
   }
 })
 ```
+
+### 自动化部署
+
+使用 `yarn upload` 即可直接自动化部署到小程序后台管理，不需要再开发者工具中点击上传
+后面可以直接使用服务器进行**自动拉取代码打包部署**
 
 ## Todos
 

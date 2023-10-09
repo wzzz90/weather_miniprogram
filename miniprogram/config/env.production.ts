@@ -1,5 +1,5 @@
 export default {
     ENV: 'production',
-    APP_ID: 'wxa8a5f72dbf49f8e1',
+    APP_ID: 'wx2535ee5d5792de0f',
     BASE_URL: 'https://restapi.amap.com',
 }

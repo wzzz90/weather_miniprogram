@@ -23,7 +23,7 @@ function injectShareForPage() {
                     }
                 },
             },
-            pageConfig
+            pageConfig,
         )
 
         _Page(pageConfig)
