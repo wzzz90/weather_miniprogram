@@ -1,0 +1,16 @@
+{
+    "authorizationFailedTip": "WeChat authorization failed",
+    "chinese": "Chinese",
+    "displayUserInfo": "Display user information",
+    "english": "English",
+    "helloWorld": "Hello World",
+    "log": "{value} Log",
+    "login": "Login",
+    "switchLanguageTip": "Please select the language to switch",
+    "toggleLanguage": "Toggle locale",
+    "toggleCity": "Toggle City",
+    "reportTime": "Data Report Time",
+    "wind": "Wind",
+    "centigrade": "Centigrade",
+    "level": "Level"
+}

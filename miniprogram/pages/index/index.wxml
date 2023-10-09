@@ -1,0 +1,86 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- Header -->
+  <view class="header">
+    <button bindtap="changeCity" size="mini">{{ t('toggleCity') }}</button>
+    <button bindtap="changeLanguage" size="mini">{{ t('toggleLanguage') }}</button>
+  </view>
+
+  <!-- Content -->
+  <view class="content">
+    <view class="top">
+      <view class="title">{{ selectWeather.currentCity.city }}</view>
+      <view class="date">{{ selectWeather.currentDate }}</view>
+      <view class="power">
+          {{
+              selectWeather.isDay
+                  ? selectWeather.data.dayweather
+                  : selectWeather.data.nightweather
+          }}
+      </view>
+      <view class="temp"
+          >{{
+              selectWeather.isDay
+                  ? selectWeather.data.daytemp_float
+                  : selectWeather.data.nighttemp_float
+          }} {{t('centigrade')}}</view
+      >
+      <view class="wind"
+          >{{
+              selectWeather.isDay
+                  ? selectWeather.data.daywind
+                  : selectWeather.data.nightwind
+          }} {{t('wind')}}</view
+      >
+      <view class="power">
+          {{
+              selectWeather.isDay
+                  ? selectWeather.data.daypower
+                  : selectWeather.data.nightpower
+          }} {{t('level')}}
+      </view>
+    </view>
+     <view class="bottom">
+      <view class="casts">
+          <view
+              wx:for="{{selectWeather.currentCity.displayCast}}"
+              class="cast-card"
+              data-date="{{item.date}}"
+              bindtap="changeDate"
+          >
+              
+              <view class="cast-weather">{{
+                  selectWeather.isDay ? item.dayweather : item.nightweather
+              }}</view>
+              <view class="cast-temp"
+                  >{{
+                      selectWeather.isDay ? item.daytemp_float : item.nighttemp_float
+                  }} {{t('centigrade')}}</view
+              >
+              <view class="cast-date">{{ item.date }}</view>
+          </view>
+      </view>
+
+      <view class="report-time">
+         {{t('reportTime')}} ：{{ selectWeather.currentCity.reporttime }}
+      </view>
+    </view>
+  </view>   
+  <mp-dialog title="{{t('toggleLanguage')}}" show="{{showDialog}}" bindbuttontap="tapDialogButton" buttons="{{[{text: t('english')}, {text: t('chinese')}]}}">
+      <view>{{ t('switchLanguageTip') }}</view>
+  </mp-dialog>
+
+    <mp-dialog title="{{t('toggleCity')}}" show="{{showCityDialog}}">
+      <view class="city-list">
+        <view
+          wx:for="{{cityList}}"
+          class="city"
+          bindtap="tapCity"
+          wx:key="item"
+          data-city="{{item}}"
+          >{{ item }}
+        </view>
+      </view>
+  </mp-dialog>
+
+</view>

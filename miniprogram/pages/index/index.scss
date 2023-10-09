@@ -1,0 +1,97 @@
+// app.scss
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 80rpx;
+        background-color: #ffffff;
+
+        .avatar {
+            width: 40rpx;
+            height: 40rpx;
+            margin-left: 10rpx;
+            border-radius: 50%;
+        }
+
+        .weather {
+            font-size: 24rpx;
+            font-weight: bold;
+        }
+    }
+
+    .content {
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        // flex-grow: 1;
+        flex: 1;
+        width: 100%;
+        padding: 20rpx;
+        overflow: hidden;
+        box-sizing: border-box;
+
+        .top {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            margin-top: 32rpx;
+
+            & > div {
+                margin-top: 20rpx;
+            }
+            .title {
+                font-size: 56rpx;
+                text-align: center;
+                margin-top: 0;
+            }
+        }
+
+        .bottom {
+            display: flex;
+            flex-direction: column;
+            margin-top: 40rpx;
+            .casts {
+                display: flex;
+                .cast-card {
+                    width: 100%;
+                    // flex: 1;
+                    border: 1rpx solid black;
+                    padding: 10rpx;
+                    & + .cast-card {
+                        margin-left: 20rpx;
+                    }
+                }
+                .cast-date {
+                    font-size: 24rpx;
+                }
+                .cast-temp {
+                    font-size: 28rpx;
+                }
+            }
+
+            .report-time {
+                display: flex;
+                flex: 1;
+                margin-top: 20rpx;
+            }
+        }
+    }
+}
+
+.city-list {
+    .city {
+        background: gray;
+        margin-top: 20rpx;
+        border-radius: 20rpx;
+    }
+}
